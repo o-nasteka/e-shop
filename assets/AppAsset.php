@@ -24,11 +24,13 @@ class AppAsset extends AssetBundle
         'css/prettyPhoto.css',
         'css/price-range.css',
         'css/responsive.css',
+        '//fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100',
+        '//fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700',
+        '//fonts.googleapis.com/css?family=Abel'
     ];
     public $js = [
         'js/contact.js',
         'js/gmaps.js',
-        'js/html5shiv.js',
         'js/jquery.prettyPhoto.js',
         'js/jquery.scrollUp.min.js',
         'js/main.js',

@@ -1,16 +1,10 @@
 ﻿
-/*************************
-*******Typography******
-**************************/
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
-@import url(http://fonts.googleapis.com/css?family=Abel);
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
+  background: #fff;
   position: relative;
-  font-weight:400px;
+  font-weight:400;
 }
 
 ul li {
@@ -49,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a#scrollUp {
-  bottom: 0px;
+  bottom: 0;
   right: 10px;
   padding: 5px 10px;
   background: #FE980F;
@@ -91,7 +85,7 @@ a#scrollUp i{
   border: 0 none;
   border-radius: 0;
   color: #696763;
-  padding:0px;
+  padding:0;
 }
 
 
@@ -204,7 +198,7 @@ a#scrollUp i{
   font-size: 14px;
   font-weight: 300;
   padding:0;
-  padding-right: 0;
+  /*padding-right: 0;*/
   margin-top: 10px;
 }
 
@@ -235,7 +229,7 @@ a#scrollUp i{
 }
 
 .mainmenu ul li:first-child{
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .mainmenu ul li a {
@@ -256,7 +250,7 @@ a#scrollUp i{
   background: #F0F0E9;
   border: medium none;
   color: #B2B2B2;
-  font-family: 'roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 12px;
   font-weight: 300;
   height: 35px;
@@ -271,8 +265,7 @@ a#scrollUp i{
 
 /*  Dropdown menu*/
 
-.navbar-header 
-.navbar-toggle .icon-bar {
+.navbar-header .navbar-toggle .icon-bar {
     background-color: #fff;
 }
 
@@ -361,7 +354,7 @@ ul.sub-menu {
 
 .companyinfo h2 {
   color: #B4B1AB;
-  font-family: abel;
+  font-family: 'Abel', sans-serif;
   font-size: 27px;
   text-transform: uppercase;
 }
@@ -433,7 +426,7 @@ ul.sub-menu {
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
   font-weight: 500;
-  margin-bottom:0px;
+  margin-bottom:0;
 }
 
 .video-gallery  h2 {
@@ -442,7 +435,7 @@ ul.sub-menu {
   font-size: 12px;
   font-weight: 300;
   text-transform:uppercase;
-  margin-top:0px;
+  margin-top:0;
 }
 
 
@@ -597,7 +590,7 @@ ul.sub-menu {
 
 .item h1 {
   color: #B4B1AB;
-  font-family: abel;
+  font-family: 'Abel', sans-serif;
   font-size: 48px;
   margin-top: 115px;
 }
@@ -708,10 +701,10 @@ h2.title:before{
 
 .category-products .panel {
 	background-color: #FFFFFF;
-	border: 0px;
-	border-radius: 0px;
+	border: 0;
+	border-radius: 0;
 	box-shadow:none;
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 
 .category-products .panel-default .panel-heading {
@@ -892,13 +885,13 @@ h2.title {
 .product-overlay {
   background:#FE980F;
   top: 0;
-  display: none;
+  /*display: none;*/
   height: 0;
   position: absolute;
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
+  /*opacity: ;*/
 }
 
 .single-products:hover .product-overlay {
@@ -908,7 +901,6 @@ h2.title {
 
 
 .product-overlay .overlay-content {
-  bottom: 0;
   position: absolute;
   bottom: 0;
   text-align: center;
