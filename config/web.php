@@ -45,6 +45,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+//                changes rules for Category from "category/view?id=1" to "category/1"
+                'category/<id:\d+>' => 'category/view'
             ],
         ],
 
