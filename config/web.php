@@ -46,8 +46,11 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-//                changes rules for Category from "category/view?id=1" to "category/1"
-                'category/<id:\d+>' => 'category/view'
+                // rules for pagination category/page PrettyURL
+                'category/<id:\d+>/page/<page:\d+>' => 'category/view',
+                // changes rules for Category from "category/view?id=1" to "category/1"
+                'category/<id:\d+>' => 'category/view',
+                'product/<view:\d+>/id/<id:\d+>' => 'product/view'
             ],
         ],
 

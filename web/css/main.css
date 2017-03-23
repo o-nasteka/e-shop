@@ -889,7 +889,12 @@ h2.title {
   font-weight: 400;
   color: #696763;
 }
-
+.productinfo a{
+  color: #696763;
+}
+.productinfo a:hover{
+  color: #FE980F;
+}
 .productinfo img{
   width: 100%;
 }
