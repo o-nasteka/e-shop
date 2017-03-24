@@ -892,7 +892,7 @@ h2.title {
 .productinfo a{
   color: #696763;
 }
-.productinfo a:hover{
+.prod-title:hover{
   color: #FE980F;
 }
 .productinfo img{
@@ -940,7 +940,7 @@ h2.title {
 
 .product-overlay .add-to-cart:hover {
   background:#fff;
-  color: #FE980F;
+  color: #fff !important;
 }
 
 
@@ -1185,8 +1185,8 @@ h2.title {
 
 .view-product img {
   border: 1px solid #F7F7F0;
-  height: 380px;
-  width: 100%;
+  /*height: 380px;*/
+  /*width: 100%;*/
 }
 
 .view-product h3 {

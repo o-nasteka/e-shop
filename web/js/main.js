@@ -1,11 +1,34 @@
 /*price range*/
 
- $('#sl2').slider();
+ 	$('#sl2').slider();
 
+    // Catalog Accordion
     $('.catalog').dcAccordion({
         speed: 300
     });
     //$('.catalog').accordion();
+
+	// Add to Cart
+	$('.add-to-cart').on('click', function(e){
+		// Disable click on button action
+		e.preventDefault();
+		// Get element ID
+		var id = $(this).data('id');
+
+		$.ajax({
+			url : '/cart/add',
+			data: {id: id},
+			type: 'GET',
+			success: function(res){
+				if(!res) alert('Error!');
+				console.log(res);
+				//showCart(res);
+			},
+			error: function(){
+				alert('Error!');
+			}
+		})
+	});
 
 	var RGBChange = function() {
 	  $('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')

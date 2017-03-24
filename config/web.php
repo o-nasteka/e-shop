@@ -50,7 +50,8 @@ $config = [
                 'category/<id:\d+>/page/<page:\d+>' => 'category/view',
                 // changes rules for Category from "category/view?id=1" to "category/1"
                 'category/<id:\d+>' => 'category/view',
-                'product/<view:\d+>/id/<id:\d+>' => 'product/view'
+                'product/<id:\d+>' => 'product/view',
+//                'category/search<q:\d+>' => 'search'
             ],
         ],
 

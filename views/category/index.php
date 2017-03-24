@@ -131,18 +131,18 @@ use yii\helpers\Url;
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <?= Html::img("@web/images/products/{$hit->img}", ['alt' => $hit->name]) ?>
+                                        <a href="<?=Url::to(['product/view', 'id' => $hit->id])?>">
+                                            <?= Html::img("@web/images/products/{$hit->img}", ['alt' => $hit->name]) ?>
+                                        </a>
                                         <h2>$<?=$hit->price?></h2>
-                                        <p><a href="<?=Url::to(['product/view', 'id' => $hit->id])?>"><?=$hit->name?></a></p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        <p><a class="prod-title" href="<?=Url::to(['product/view', 'id' => $hit->id])?>"><?=$hit->name?></a></p>
+                                        <!--   Add to Cart button  -->
+                                        <!--   data-id= id =>  main.js // Add to Cart 11 Line -->
+                                        <a href="<?= Url::to(['cart/add' , 'id' => $hit->id])?>" data-id="<?= $hit->id ?>" class="btn btn-default add-to-cart">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            Add to cart
+                                        </a>
                                     </div>
-<!--                                    <div class="product-overlay">-->
-<!--                                        <div class="overlay-content">-->
-<!--                                            <h2>$--><?//=$hit->price?><!--</h2>-->
-<!--                                            <p><a href="--><?//=Url::to(['product/view', 'id' => $hit->id])?><!--">--><?//=$hit->name?><!--</a></p>-->
-<!--                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
                                     <!--  New or Sale label -->
                                     <?php if($hit->new) :?>
                                     <?= Html::img("@web/images/home/new.png", ['alt' => 'New Product', 'class' => 'new']) ?>
