@@ -137,7 +137,7 @@ use yii\helpers\Url;
                                         <h2>$<?=$hit->price?></h2>
                                         <p><a class="prod-title" href="<?=Url::to(['product/view', 'id' => $hit->id])?>"><?=$hit->name?></a></p>
                                         <!--   Add to Cart button  -->
-                                        <!--   data-id= id =>  main.js // Add to Cart 11 Line -->
+                                        <!--   data-id= id =>  main.js // Add to Cart  -->
                                         <a href="<?= Url::to(['cart/add' , 'id' => $hit->id])?>" data-id="<?= $hit->id ?>" class="btn btn-default add-to-cart">
                                             <i class="fa fa-shopping-cart"></i>
                                             Add to cart

@@ -903,6 +903,10 @@ h2.title {
  position:relative;
 }
 
+.del-item{
+  cursor: pointer;
+}
+
 .product-overlay {
   background:#FE980F;
   top: 0;

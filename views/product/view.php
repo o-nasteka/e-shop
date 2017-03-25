@@ -105,11 +105,11 @@ use yii\widgets\LinkPager;
 								<span>
 									<span>US $<?=$product->price?></span>
 									<label>Quantity:</label>
-									<input type="text" value="1" />
-									<button type="button" class="btn btn-fefault cart">
+									<input type="text" value="1"id="qty"  />
+									<a href="<?= Url::to(['cart/add', 'id' => $product->id  ])?>" data-id="<?= $product->id ?>" class="btn btn-fefault cart add-to-cart">
                                         <i class="fa fa-shopping-cart"></i>
                                         Add to cart
-                                    </button>
+                                    </a>
 								</span>
                             <!--  In Stock -->
                             <?php if($product->instock == '1') :?>
@@ -348,7 +348,7 @@ use yii\widgets\LinkPager;
                                                                 <?=$hit->name?>
                                                             </a>
                                                         </p>
-                                                        <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                        <a href="#" data-id="<?= $hit->id ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
