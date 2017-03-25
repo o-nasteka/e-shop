@@ -57,6 +57,7 @@
 		})
 	})
 
+
 	// Clear Cart
 	function clearCart(){
 		$.ajax({

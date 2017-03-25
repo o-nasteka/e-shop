@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use \yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "order_items".
@@ -15,7 +16,7 @@ use Yii;
  * @property integer $qty
  * @property double $sum_item
  */
-class OrderItems extends \yii\db\ActiveRecord
+class OrderItems extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -38,19 +39,12 @@ class OrderItems extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'order_id' => 'Order ID',
-            'product_id' => 'Product ID',
-            'name' => 'Name',
-            'price' => 'Price',
-            'qty' => 'Qty',
-            'sum_item' => 'Sum Item',
-        ];
+    // Relation
+    public function getOrder(){
+
+        return $this->hasOne(Order::className(), ['id' => 'order_id']);
+
     }
+
+
 }
