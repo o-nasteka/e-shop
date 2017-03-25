@@ -114,4 +114,8 @@ class CartController extends AppController {
         return $this->render('cart-modal', compact('session'));
     }
 
+    public function actionView(){
+        return $this->render('view');
+    }
+
 }

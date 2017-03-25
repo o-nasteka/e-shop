@@ -350,7 +350,7 @@ LtAppAsset::register($this);
             '
             <button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
             <button type="button" class="btn btn-danger" onclick="clearCart()">Очистить корзину</button>
-            <a href="' . Url::to(['cart/view', 'id' => $product->id  ]) . '" class="btn btn-success" >Оформить заказ</a>
+            <a href="' . Url::to(['cart/view']) . '" class="btn btn-success" >Оформить заказ</a>
             '
     ]);
 

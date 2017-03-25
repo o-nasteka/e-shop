@@ -1,7 +1,1 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: nasteka
- * Date: 3/25/17
- * Time: 16:40
- */
+<h2>Cart View</h2>
