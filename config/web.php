@@ -32,9 +32,9 @@ $config = [
             'useFileTransport' => true,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'localhost',
-                'username' => 'username',
-                'password' => 'password',
+                'host' => 'smtp.gmail.com',
+                'username' => 'o.nasteka',
+                'password' => 'gibraltar123',
                 'port' => '587',
                 'encryption' => 'tls',
             ],
