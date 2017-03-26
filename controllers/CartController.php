@@ -127,12 +127,52 @@ class CartController extends AppController {
         // Create New Order
         $order = new Order();
 
+        // Get Data from OrderForm
         if( $order->load(Yii::$app->request->post()) ){
-            debug(Yii::$app->request->post());
+
+            // Get Qty & Sum from session
+            $order->qty = $session['cart.qty'];
+            $order->sum = $session['cart.sum'];
+
+            // Save order
+            if($order->save()){
+                // Call to Save Order Items method
+                $this->saveOrderItems($session['cart'], $order->id);
+
+                Yii::$app->session->setFlash(
+                    'success',
+                    'Ваш заказ принят! Наш менеджер свяжется с Вами в ближайшее время.'
+                );
+                // Clear cart
+                $session->remove('cart');
+                $session->remove('cart.qty');
+                $session->remove('cart.sum');
+                // Refresh page
+                return $this->refresh();
+            }else{
+                Yii::$app->session->setFlash(
+                    'error',
+                    'Ошибка оформления заказа!'
+                );
+            }
         }
 
         // Send to View, cart item($session) and new order($order)
         return $this->render('view', compact('session', 'order'));
+    }
+
+    // Save order Items; get $items(cart item), $order_id
+    protected function saveOrderItems($items, $order_id){
+        foreach($items as $id => $item){
+            $order_items = new OrderItems();
+            $order_items->order_id = $order_id;
+            $order_items->product_id = $id;
+            $order_items->name = $item['name'];
+            $order_items->price = $item['price'];
+            $order_items->qty_item = $item['qty'];
+            $order_items->sum_item = $item['qty'] * $item['price'];
+            $order_items->save();
+        }
     }
 
 }

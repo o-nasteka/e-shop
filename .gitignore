@@ -9,6 +9,8 @@ nbproject
 .project
 .settings
 
+/config/web.php
+
 # windows thumbnail cache
 Thumbs.db
 

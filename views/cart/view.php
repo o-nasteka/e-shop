@@ -5,6 +5,22 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="container" id="cart-order">
+    <!-- Success Message from Flash -->
+    <?php if( Yii::$app->session->hasFlash('success') ): ?>
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <?php echo Yii::$app->session->getFlash('success'); ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- Error Message from Flash -->
+    <?php if( Yii::$app->session->hasFlash('error') ): ?>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <?php echo Yii::$app->session->getFlash('error'); ?>
+        </div>
+    <?php endif; ?>
+
     <?php if(!empty($session['cart'])) : ?>
         <div class="table-responsive">
             <table class="table table-hover table-striped">
@@ -60,14 +76,16 @@ use yii\widgets\ActiveForm;
         <br><br>
         <?php $form = ActiveForm::end(); ?>
     <?php else : ?>
-        <br>
-        <br>
-        <h4>
-            В корзине покупок ничего нет! <br>
-            Выберите понравившиеся товары и добавьте их в корзину.
-        </h4>
-        <br>
-        <br>
+        <?php if(!Yii::$app->session->getFlash('success')) : ?>
+            <br>
+            <br>
+            <h4>
+                В корзине покупок ничего нет! <br>
+                Выберите понравившиеся товары и добавьте их в корзину.
+            </h4>
+            <br>
+            <br>
+        <?php endif; ?>
     <?php endif; ?>
 
 </div>
