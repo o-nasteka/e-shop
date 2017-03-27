@@ -7,6 +7,12 @@ $config = [
     'basePath' => dirname(__DIR__),
     'language' => 'ru-RU',
     'defaultRoute' => 'category/index',
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+            'layout' => 'admin'
+        ],
+    ],
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
@@ -20,6 +26,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+//            'loginUrl' => 'cart/view',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -29,12 +36,12 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
-                'username' => 'o.nasteka',
-                'password' => 'gibraltar123',
+                'username' => 'oleg.nasteka@gmail.com',
+                'password' => 'mfuxgazjqougjfdz',
                 'port' => '587',
                 'encryption' => 'tls',
             ],

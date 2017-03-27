@@ -2,6 +2,7 @@
 
  	$('#sl2').slider();
 
+
     // Catalog Accordion
     $('.catalog').dcAccordion({
         speed: 300

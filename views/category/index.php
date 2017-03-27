@@ -118,6 +118,9 @@ use yii\helpers\Url;
                 </div>
             </div>
 
+            <!--   User Identity debug         -->
+            <?php //debug(Yii::$app->user->identity)?>
+
             <div class="col-sm-9 padding-right">
                 <!-- Hits -->
                 <?php if( !empty($hits) ) :?>
@@ -164,7 +167,7 @@ use yii\helpers\Url;
                    <!-- End foreach -->
                    <?php endforeach; ?>
 
-                </div><!--features_items-->
+                </div><!--end features_items-->
                 <?php endif; ?>
                 <!-- End Hits -->
 

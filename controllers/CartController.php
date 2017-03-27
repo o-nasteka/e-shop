@@ -143,6 +143,19 @@ class CartController extends AppController {
                     'success',
                     'Ваш заказ принят! Наш менеджер свяжется с Вами в ближайшее время.'
                 );
+                // Send E-Mail
+                Yii::$app->mailer->compose('order', ['session' => $session])
+                    ->setFrom(['o.nasteka@gmail.com' => 'E-Shopper'])
+                    ->setTo($order->email)
+                    ->setSubject('Заказ')
+                    ->send();
+                // To admin   adminEmail -> config/params.php
+                Yii::$app->mailer->compose('order', ['session' => $session])
+                    ->setFrom(['o.nasteka@gmail.com' => 'E-Shopper'])
+                    ->setTo(Yii::$app->params['adminEmail'])
+                    ->setSubject('Заказ')
+                    ->send();
+
                 // Clear cart
                 $session->remove('cart');
                 $session->remove('cart.qty');
