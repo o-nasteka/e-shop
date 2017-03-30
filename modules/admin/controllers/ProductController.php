@@ -66,6 +66,13 @@ class ProductController extends Controller
         $model = new Product();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            // Set Flash message
+            Yii::$app->session->setFlash(
+                'success',
+                "Товар {$model->name} успешно добавлен!"
+            );
+
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -85,6 +92,11 @@ class ProductController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            // Set Flash message
+            Yii::$app->session->setFlash(
+                'success',
+                "Товар {$model->name} успешно изменен!"
+            );
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -101,7 +113,15 @@ class ProductController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        // Set Flash message
+        Yii::$app->session->setFlash(
+            'success',
+            "Товар {$model->name} успешно удален!"
+        );
+
+        $model->delete();
 
         return $this->redirect(['index']);
     }

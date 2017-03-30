@@ -26,8 +26,6 @@ use \app\modules\admin\models\Category;
             <option value="0">Родительская категория</option>
             <?= MenuWidget::widget(['tpl' => 'select', 'model' => $model])?>
         </select>
-
-
     </div>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>

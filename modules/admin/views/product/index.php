@@ -19,16 +19,70 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            // ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'category_id',
+            // 'category_id',
             'name',
-            'content:ntext',
-            'price',
+            [
+                'attribute' => 'category_id',
+                'value' => function($data){
+                    return $data['category']['name'];
+                },
+            ],
+            // 'content:ntext',
+            // 'price',
+            [
+                'attribute' => 'price',
+                'value' => function($data){
+                    return '<span>$ </span>' . $data['price'];
+
+                },
+                'format' => 'html'
+            ],
             // 'keywords',
             // 'description',
             // 'img',
+            [
+                'attribute' => 'hit',
+                'value' => function($data){
+                    return !$data['hit']
+                        ? '<span class="text-danger">Нет</span>'
+                        : '<span class="text-success">Да</span>';
+
+                },
+                'format' => 'html'
+            ],
+            [
+                'attribute' => 'new',
+                'value' => function($data){
+                    return !$data['new']
+                        ? '<span class="text-danger">Нет</span>'
+                        : '<span class="text-success">Да</span>';
+
+                },
+                'format' => 'html'
+            ],
+            [
+                'attribute' => 'sale',
+                'value' => function($data){
+                    return !$data['sale']
+                        ? '<span class="text-danger">Нет</span>'
+                        : '<span class="text-success">Да</span>';
+
+                },
+                'format' => 'html'
+            ],
+            [
+                'attribute' => 'instock',
+                'value' => function($data){
+                    return !$data['instock']
+                        ? '<span class="text-danger">Нет</span>'
+                        : '<span class="text-success">Да</span>';
+
+                },
+                'format' => 'html'
+            ],
             // 'hit',
             // 'new',
             // 'sale',

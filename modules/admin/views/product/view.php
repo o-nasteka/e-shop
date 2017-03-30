@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\Product */
 
@@ -24,22 +25,62 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            'category_id',
+            // 'category_id',
+            [
+                'attribute' => 'category_id',
+                'value' => $model['category']['name'],
+            ],
             'name',
             'content:ntext',
             'price',
             'keywords',
             'description',
-            'img',
-            'hit',
-            'new',
-            'sale',
-            'instock',
+            // 'img',
+            [
+                'attribute' => 'img',
+                'value' => Html::img("@web/images/products/{$model->img}", ['alt' => $model->name, 'height' => '150']),
+                'format' => 'html'
+            ],
+            [
+                'attribute' => 'hit',
+                'value' =>
+                     !$model['hit']
+                        ? '<span class="text-danger">Нет</span>'
+                        : '<span class="text-success">Да</span>',
+                'format' => 'html'
+            ],
+            [
+                'attribute' => 'new',
+                'value' =>
+                    !$model['new']
+                        ? '<span class="text-danger">Нет</span>'
+                        : '<span class="text-success">Да</span>',
+                'format' => 'html'
+            ],
+            [
+                'attribute' => 'sale',
+                'value' =>
+                    !$model['sale']
+                        ? '<span class="text-danger">Нет</span>'
+                        : '<span class="text-success">Да</span>',
+                'format' => 'html'
+            ],
+            [
+                'attribute' => 'instock',
+                'value' =>
+                    !$model['instock']
+                        ? '<span class="text-danger">Нет</span>'
+                        : '<span class="text-success">Да</span>',
+                'format' => 'html'
+            ],
+            // 'hit',
+            // 'new',
+            // 'sale',
+            // 'instock',
         ],
     ]) ?>
 
