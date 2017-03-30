@@ -133,67 +133,29 @@ use yii\widgets\LinkPager;
                 <!--/category-tab-->
 
                 <!--category-tab-->
-                <!-- <div class="category-tab shop-details-tab">
+                <!-- --> <div class="category-tab shop-details-tab">
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
-                            <li><a href="#details" data-toggle="tab">Details</a></li>
+                            <li class="active"><a href="#details" data-toggle="tab">Описание товара</a></li>
+                            <!--
                             <li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
                             <li><a href="#tag" data-toggle="tab">Tag</a></li>
                             <li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+                            -->
                         </ul>
                     </div>
                     <div class="tab-content">
-                        <div class="tab-pane fade" id="details" >
-                            <div class="col-sm-3">
+                        <div class="tab-pane fade active in" id="details" >
+                            <div class="col-lg-12">
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="/images/home/gallery1.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="/images/home/gallery2.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="/images/home/gallery3.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="/images/home/gallery4.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
+                                        <?=$product->content?>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <!--
                         <div class="tab-pane fade" id="companyprofile" >
                             <div class="col-sm-3">
                                 <div class="product-image-wrapper">
@@ -322,7 +284,7 @@ use yii\widgets\LinkPager;
 
                     </div>
                 </div>
-                -->
+                <!-- -->
 
 
                 <div class="recommended_items"><!--recommended_items-->

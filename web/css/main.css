@@ -1013,7 +1013,7 @@ h2.title {
   overflow: hidden;
 }
 
-.category-tab ul {
+.category-tab .nav {
   background: #40403E;
   border-bottom: 1px solid #FE980F;
   list-style: none outside none;
