@@ -122,6 +122,7 @@ LtAppAsset::register($this);
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                                 <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                 <li><a href="#" onclick="return getCart()"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+
                                 <!-- Login  -->
                                 <?php if(!Yii::$app->user->isGuest) : ?>
                                     <li class="dropdown">
@@ -130,13 +131,14 @@ LtAppAsset::register($this);
                                             <?= Yii::$app->user->identity['username'] ?>
                                             <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
+                                            <li><a href="<?= Url::to(['/admin/'])?>">Заказы</a></li>
+                                            <br>
                                             <li>
                                                 <a href="<?= Url::to(['/site/logout'])?>">Выход</a>
                                             </li>
                                         </ul>
-                                    <?php if(Yii::$app->user->isGuest) : ?>
+                                    <?php elseif(Yii::$app->user->isGuest) : ?>
                                         <li><a href="<?= Url::to(['/admin']) ?>"><i class="fa fa-lock"></i> Login</a></li>
-                                    <?php endif; ?>
                                 <?php endif; ?>
                                 <!-- End Login  -->
                             </ul>
@@ -161,25 +163,20 @@ LtAppAsset::register($this);
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li>
-                                    <a href="<?=Url::home()?>">Home</a>
+                                    <a href="<?=Url::to(['/admin'])?>">Главная</a>
                                 </li>
-                                <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                                <li class="dropdown"><a href="#">Категории<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="<?=Url::to(['category/index'])?>">Список категорий</a></li>
+                                        <li><a href="<?=Url::to(['category/create'])?>">Добавить категорию</a></li>
+
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                                <li class="dropdown"><a href="#">Товары<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-                                        <li><a href="blog-single.html">Blog Single</a></li>
+                                        <li><a href="<?=Url::to(['product/index'])?>">Список товаров</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -195,7 +192,20 @@ LtAppAsset::register($this);
         </div><!--/header-bottom-->
     </header><!--/header-->
 
-    <?= $content ?>
+    <div class="container">
+
+        <!-- Success Message from Flash -->
+        <?php if( Yii::$app->session->hasFlash('success') ): ?>
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <?php echo Yii::$app->session->getFlash('success'); ?>
+            </div>
+        <?php endif; ?>
+
+        <?= $content ?>
+
+    </div>
+
 
     <footer id="footer"><!--Footer-->
         <div class="footer-top">

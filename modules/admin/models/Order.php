@@ -2,7 +2,9 @@
 
 namespace app\modules\admin\models;
 
+
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "order".
@@ -18,7 +20,7 @@ use Yii;
  * @property string $phone
  * @property string $address
  */
-class Order extends \yii\db\ActiveRecord
+class Order extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -27,6 +29,13 @@ class Order extends \yii\db\ActiveRecord
     {
         return 'order';
     }
+
+    // Relation
+    public function getOrderItems(){
+
+       return $this->hasMany(OrderItems::className(), ['order_id' => 'id'])->all() ;
+    }
+
 
     /**
      * @inheritdoc
@@ -49,16 +58,16 @@ class Order extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'qty' => 'Qty',
-            'sum' => 'Sum',
-            'status' => 'Status',
-            'name' => 'Name',
-            'email' => 'Email',
-            'phone' => 'Phone',
-            'address' => 'Address',
+            'id' => '№ Заказа',
+            'created_at' => 'Дата создания',
+            'updated_at' => 'Дата изменения',
+            'qty' => 'Количество',
+            'sum' => 'Сумма',
+            'status' => 'Статус',
+            'name' => 'Имя',
+            'email' => 'E-mail',
+            'phone' => 'Телефон',
+            'address' => 'Адрес',
         ];
     }
 }

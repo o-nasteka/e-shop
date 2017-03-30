@@ -130,6 +130,8 @@ LtAppAsset::register($this);
                                         <?= Yii::$app->user->identity['username'] ?>
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
+                                        <li><a href="<?= Url::to(['/admin/'])?>">Заказы</a></li>
+                                        <br>
                                         <li>
                                             <a href="<?= Url::to(['/site/logout'])?>">Выход</a>
                                         </li>

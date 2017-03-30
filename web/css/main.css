@@ -224,6 +224,7 @@ a#scrollUp i{
 }
 
 .mainmenu ul li{
+  padding-top: 5px;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -2407,12 +2408,12 @@ h2.title {
   border: 1px solid#F7F7F0
 }
 
-.btn.btn-primary {
-  background:#FE980F;
-  border: 0 none;
-  border-radius: 0;
-  margin-top: 16px;
-}
+/*.btn.btn-primary {*/
+  /*background:#FE980F;*/
+  /*border: 0 none;*/
+  /*border-radius: 0;*/
+  /*margin-top: 16px;*/
+/*}*/
 
 .blank-arrow {
   position: relative;
